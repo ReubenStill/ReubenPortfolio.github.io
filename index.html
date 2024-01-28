@@ -122,14 +122,30 @@
 
         @keyframes backgroundAnimation {
             0% {
-                transform: scale(1.1);
+                transform: scale(1.1) rotateX(0deg) rotateY(0deg);
             }
             50% {
-                transform: scale(1.15);
+                transform: scale(1.15) rotateX(180deg) rotateY(180deg);
             }
             100% {
-                transform: scale(1.1);
+                transform: scale(1.1) rotateX(0deg) rotateY(0deg);
             }
+        }
+
+        /* 3D Animation on Page Load */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateZ(-1000px) rotateX(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateZ(0) rotateX(0deg);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
         }
 
         /* Responsive Design */
@@ -158,7 +174,7 @@
     </style>
 </head>
 
-<body>
+<body class="fade-in">
 
     <div class="interactive-background">
         <div class="background-layer" style="background-image: url('https://images.squarespace-cdn.com/content/v1/5769fc401b631bab1addb2ab/1541580611624-TE64QGKRJG8SWAIUS7NS/ke17ZwdGBToddI8pDm48kPoswlzjSVMM-SxOp7CV59BZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI6FXy8c9PWtBlqAVlUS5izpdcIXDZqDYvprRqZ29Pw0o/coding-freak.gif');"></div>
