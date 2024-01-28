@@ -124,7 +124,7 @@
 <body>
 
     <div class="interactive-background">
-        <div class="background-layer" style="background-image: url('your-background-image.gif');"></div>
+        <div class="background-layer" style="background-image: url('your-background-image.jpg');"></div>
     </div>
 
     <nav>
@@ -173,4 +173,29 @@
 
     <script>
         // Add smooth scroll to anchor links
-        document.querySelectorAll('a[href^="#"]').forEach
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Change navigation background on scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('header');
+
+            if (window.scrollY > header.offsetHeight) {
+                nav.style.background = '#34495e';
+            } else {
+                nav.style.background = 'rgba(52, 73, 94, 0.8)';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
