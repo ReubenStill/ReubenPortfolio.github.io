@@ -16,15 +16,23 @@
             color: #fff;
             scroll-behavior: smooth; /* Smooth scrolling for the entire page */
         }
-
+.interactive-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
         header {
             text-align: center;
             padding: 50px;
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 3em;
             margin: 0;
+            color: #fff;
         }
 
         p {
@@ -97,6 +105,7 @@
         nav a:hover {
             color: #3498db;
         }
+        
     </style>
 </head>
 
@@ -158,6 +167,9 @@
                 });
             });
         });
+        div class="interactive-background">
+        <div class="background-layer" style="background-image: url('https://i.pinimg.com/originals/2b/de/7d/2bde7d14133968f97d6c4dd898edb989.gif');"></div>
+    </div>
 
         // Change navigation background on scroll
         window.addEventListener('scroll', function () {
