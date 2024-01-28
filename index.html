@@ -14,6 +14,7 @@
             font-family: 'Open Sans', sans-serif;
             background: linear-gradient(45deg, #3498db, #8e44ad);
             color: #fff;
+            scroll-behavior: smooth; /* Smooth scrolling for the entire page */
         }
 
         header {
@@ -39,10 +40,8 @@
         }
 
         .card {
-background: linear-gradient(45deg, #3498db, #9b59b6);
-
-
-    padding: 20px;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            padding: 20px;
             border-radius: 10px;
             width: 300px;
             text-align: center;
@@ -75,46 +74,96 @@ background: linear-gradient(45deg, #3498db, #9b59b6);
             text-align: center;
             padding: 20px;
         }
+
+        /* Navigation Animation */
+        nav {
+            background: rgba(52, 73, 94, 0.8);
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#things">Other Things</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header id="about">
         <h1>Reuben Jacob</h1>
-        <p>Day Dreaming Dev
-<br>
-Pronouns: He/Him</p>
-          </header>
+        <p>Day Dreaming Dev</p>
+        <hr>
+    </header>
 
     <section>
-        <div class="card">
+        <div class="card" id="hobbies">
             <h2>Hobbies</h2>
             <p>I love Programming/Coding in Python, Html,Css,Javascript Learning-Java
-</p>
+            </p>
         </div>
-        <div class="card">
+        <div class="card" id="things">
             <h2>Other Things</h2>
             <p>I love soccer and playing guitar, Metallica is my favorite band :
                 ¡Hala Madrid!...y nada más.
- </p>
+            </p>
         </div>
     </section>
 
     <div class="arrow-down">
-        <i class="fas fa-arrow-down"></i>
+        <a href="#contact"><i class="fas fa-arrow-down"></i></a>
     </div>
 
-    <footer>
-        <p>Discord- @reubendisc</p>
-
+    <footer id="contact">
+        <p>Contact: Discord- @reubendisc</p>
         <div class="h2">
-<h4><a href="https://github.com/ReubenStill" target="_blank">My GitHub profile</a></h4>
-</div>
-
+            <h4><a href="https://github.com/ReubenStill" target="_blank">My GitHub profile</a></h4>
+        </div>
     </footer>
 
- 
+    <script>
+        // Add smooth scroll to anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Change navigation backgroundon scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('header');
+
+            if (window.scrollY > header.offsetHeight) {
+                nav.style.background = '#34495e';
+            } else {
+                nav.style.background = 'rgba(52, 73, 94, 0.8)';
+            }
+        });
+    </script>
 
 </body>
 
