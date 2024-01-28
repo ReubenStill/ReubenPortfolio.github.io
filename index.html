@@ -119,30 +119,37 @@
             opacity: 0.5;
             animation: backgroundAnimation 30s linear infinite;
         }
+/* Remove the existing 3D rotation animation */
+@keyframes backgroundAnimation {
+    0% {
+        transform: scale(1.1) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: scale(1.15) rotateX(180deg) rotateY(180deg);
+    }
+    100% {
+        transform: scale(1.1) rotateX(0deg) rotateY(0deg);
+    }
+}
 
-        @keyframes backgroundAnimation {
-            0% {
-                transform: scale(1.1) rotateX(0deg) rotateY(0deg);
-            }
-            50% {
-                transform: scale(1.15) rotateX(180deg) rotateY(180deg);
-            }
-            100% {
-                transform: scale(1.1) rotateX(0deg) rotateY(0deg);
-            }
-        }
+/* Remove the existing fade-in animation */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
 
-        /* 3D Animation on Page Load */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateZ(-1000px) rotateX(90deg);
-            }
-            to {
-                opacity: 1;
-                transform: translateZ(0) rotateX(0deg);
-            }
-        }
+/* New Fade-in Animation on Page Load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
 
         .fade-in {
             animation: fadeIn 2s ease-in-out;
