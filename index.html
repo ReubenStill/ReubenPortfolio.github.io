@@ -141,7 +141,7 @@
 <body>
 
     <div class="interactive-background">
-        <div class="background-layer" style="background-image: url();"></div>
+        <div class="background-layer" style="background-image: url('https://i.pinimg.com/originals/2b/de/7d/2bde7d14133968f97d6c4dd898edb989.gif');"></div>
     </div>
 
     <nav>
@@ -160,17 +160,17 @@
     </header>
 
     <section>
-       
+        <div class="card" id="hobbies">
             <h2>Hobbies</h2>
             <p>I love Programming/Coding in Python, Html,CSS, Javascript Learning-Java
             </p>
         </div>
-        
+        <div class="card" id="games">
             <h2>Games I Play</h2>
             <p>I enjoy playing games such as GTA, Minecraft, and .io games
             </p>
         </div>
-        
+        <div class="card" id="things">
             <h2>Other Things</h2>
             <p>I love soccer and playing guitar, Metallica is my favorite band :
                 ¡Hala Madrid!...y nada más.
@@ -178,20 +178,18 @@
         </div>
     </section>
 
-    <br>
     <div class="arrow-down">
         <a href="#contact"><i class="fas fa-arrow-down"></i></a>
     </div>
 
-    <footer>
+    <footer id="contact">
         <p>Contact: Discord- @reubendisc</p>
         <div class="h2">
             <h4><a href="https://github.com/ReubenStill" target="_blank">My GitHub profile</a></h4>
         </div>
     </footer>
 
-  
-
+   
     <script>
         // Add smooth scroll to anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -204,8 +202,19 @@
             });
         });
 
-      
-       
+        // Change navigation background on scroll
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            const header = document.querySelector('header');
+
+            if (window.scrollY > header.offsetHeight) {
+                nav.style.background = '#34495e';
+            } else {
+                nav.style.background = 'rgba(52, 73, 94, 0.8)';
+            }
+        });
+
+        
 
 </body>
 
