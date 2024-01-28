@@ -208,30 +208,8 @@
             });
         });
 
-        // Change navigation background on scroll
-        window.addEventListener('scroll', function () {
-            const nav = document.querySelector('nav');
-            const header = document.querySelector('header');
-
-            if (window.scrollY > header.offsetHeight) {
-                nav.style.background = '#34495e';
-            } else {
-                nav.style.background = 'rgba(52, 73, 94, 0.8)';
-            }
-        });
-
-        // Portfolio Filtering
-        function filterPortfolio(category) {
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+      
+       
 
 </body>
 
