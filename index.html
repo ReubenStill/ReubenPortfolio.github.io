@@ -16,14 +16,7 @@
             color: #fff;
             scroll-behavior: smooth; /* Smooth scrolling for the entire page */
         }
-.interactive-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+
         header {
             text-align: center;
             padding: 50px;
@@ -32,7 +25,6 @@
         h1 {
             font-size: 3em;
             margin: 0;
-            color: #fff;
         }
 
         p {
@@ -105,11 +97,35 @@
         nav a:hover {
             color: #3498db;
         }
-        
+
+        /* Interactive Background */
+        .interactive-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .background-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
     </style>
 </head>
 
 <body>
+
+    <div class="interactive-background">
+        <div class="background-layer" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ae71cac-8245-4faa-ab00-90280c73c92a/deu1tx8-9abd045e-b740-4cf3-8999-ae4c217c6901.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRhZTcxY2FjLTgyNDUtNGZhYS1hYjAwLTkwMjgwYzczYzkyYVwvZGV1MXR4OC05YWJkMDQ1ZS1iNzQwLTRjZjMtODk5OS1hZTRjMjE3YzY5MDEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.S2mMUwZp8qJimph3eHCYqQ8ZLgxcvT1FH1nAeqq0GhI');"></div>
+    </div>
 
     <nav>
         <a href="#about">About</a>
@@ -123,18 +139,17 @@
         <h1>Reuben Jacob</h1>
         <p>Day Dreaming Dev
             <br>
-           
     </header>
 
     <section>
         <div class="card" id="hobbies">
             <h2>Hobbies</h2>
-            <p>I love Programming/Coding in Python, Html,Css,Javascript Learning-Java
+            <p>I love Programming/Coding in Python, Html,CSS, Javascript Learning-Java
             </p>
         </div>
         <div class="card" id="games">
             <h2>Games I Play</h2>
-            <p>I enjoy playing games such as GTA,Minecraft and .io games
+            <p>I enjoy playing games such as GTA, Minecraft, and .io games
             </p>
         </div>
         <div class="card" id="things">
@@ -152,40 +167,10 @@
     <footer id="contact">
         <p>Contact: Discord- @reubendisc</p>
         <div class="h2">
-            <h1><a href="https://github.com/ReubenStill" target="_blank">My GitHub profile</a></h1>
+            <h4><a href="https://github.com/ReubenStill" target="_blank">My GitHub profile</a></h4>
         </div>
     </footer>
 
     <script>
         // Add smooth scroll to anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        div class="interactive-background">
-        <div class="background-layer" style="background-image: url('https://i.pinimg.com/originals/2b/de/7d/2bde7d14133968f97d6c4dd898edb989.gif');"></div>
-    </div>
-
-        // Change navigation background on scroll
-        window.addEventListener('scroll', function () {
-            const nav = document.querySelector('nav');
-            const header = document.querySelector('header');
-
-            if (window.scrollY > header.offsetHeight) {
-                nav.style.background = '#34495e';
-            } else {
-                nav.style.background = 'rgba(52, 73, 94, 0.8)';
-            }
-        });
-    </script>
-
-</body>
-
-</html>
-
-ChatGPT
+        document.querySelectorAll('a[href^="#"]').forEach
