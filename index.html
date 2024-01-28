@@ -107,6 +107,7 @@
             height: 100%;
             pointer-events: none;
             z-index: -1;
+            overflow: hidden;
         }
 
         .background-layer {
@@ -117,6 +118,43 @@
             background-position: center;
             filter: blur(10px);
             opacity: 0.5;
+            animation: backgroundAnimation 30s linear infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            section {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -124,7 +162,7 @@
 <body>
 
     <div class="interactive-background">
-        <div class="background-layer" style="background-image: url('your-background-image.jpg');"></div>
+        <div class="background-layer" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ae71cac-8245-4faa-ab00-90280c73c92a/deu1tx8-9abd045e-b740-4cf3-8999-ae4c217c6901.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRhZTcxY2FjLTgyNDUtNGZhYS1hYjAwLTkwMjgwYzczYzkyYVwvZGV1MXR4OC05YWJkMDQ1ZS1iNzQwLTRjZjMtODk5OS1hZTRjMjE3YzY5MDEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.S2mMUwZp8qJimph3eHCYqQ8ZLgxcvT1FH1nAeqq0GhI');"></div>
     </div>
 
     <nav>
