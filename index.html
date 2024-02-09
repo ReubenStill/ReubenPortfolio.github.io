@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        chat-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+            margin: auto;
+            padding: 10px;
+        }
+        .messages {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .user-message {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+        .bot-message {
+            background-color: #d9edf7;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -222,6 +246,27 @@
                 nav.style.background = 'rgba(52, 73, 94, 0.8)';
             }
         });
+            <div class="chat-container">
+        <div class="messages" id="messages">
+            <div class="bot-message">Welcome! How can I assist you today?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('user-input').value;
+            var messagesContainer = document.getElementById('messages');
+            var userMessage = '<div class="user-message">' + userInput + '</div>';
+            var botMessage = '<div class="bot-message">Sorry, I am just a demo chatbot. I cannot respond.</div>';
+            messagesContainer.innerHTML += userMessage;
+            setTimeout(function() {
+                messagesContainer.innerHTML += botMessage;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+            document.getElementById('user-input').value = '';
+        }
     </script>
 
 </body>
